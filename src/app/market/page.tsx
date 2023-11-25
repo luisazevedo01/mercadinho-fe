@@ -1,18 +1,12 @@
 import { ProductCard } from "@/components/cards/ProductCard";
+import { MOCKED_PRODUCTS } from "@/constants/mocked-products";
 
 export default function Market() {
     return (
         <div className="p-20 bg-lime-200 flex flex-wrap justify-center max-w">
-            <ProductCard img={'/images/tomatoes.png'} title={"Tomate"} price={"1.30"} />
-            <ProductCard img={'/images/alface.jpeg'} title={"Alface"} price={"0.80"} />
-            <ProductCard img={'/images/orange.png'} title={"Laranja"} price={"1.00"} />
-            <ProductCard img={'/images/pepino.png'} title={"Pepino"} price={"1.00"} />
-            <ProductCard img={'/images/cebola.jpeg'} title={"Cebola"} price={"1.00"} />
-            <ProductCard img={'/images/potatoes.png'} title={"Batatas"} price={"1.00"} />
-            <ProductCard img={'/images/orange.png'} title={"Laranja"} price={"1.00"} />
-            <ProductCard img={'/images/pepino.png'} title={"Pepino"} price={"1.00"} />
-            <ProductCard img={'/images/cebola.jpeg'} title={"Cebola"} price={"1.00"} />
-            <ProductCard img={'/images/potatoes.png'} title={"Batatas"} price={"1.00"} />
+            {MOCKED_PRODUCTS.map((product, idx) => (
+                <ProductCard key={`product_${idx}`} img={product.img} title={product.title} price={product.price} />
+            ))}
         </div>
     )
 }
