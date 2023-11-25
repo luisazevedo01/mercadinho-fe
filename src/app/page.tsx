@@ -1,95 +1,63 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client'
+import { useRouter } from "next/navigation";
 
-export default function Home() {
+export default function Default() {
+  const router = useRouter();
+
+  const redirect = () => {
+    router.push('/login')
+  }
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="">
+      <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
+        <div className="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10">
+          <div className="mx-auto max-w-md">
+            <img src="/logo.jpg" className="mx-auto h-20" alt="Logo" />
+            <div className="divide-y divide-gray-300/50">
+              <div className="space-y-6 py-8 text-base leading-7 text-gray-600">
+                <p>Um mercado de produtos locais para promover o comércio local, junta-te a nós se:</p>
+                <ul className="space-y-4">
+                  <li className="flex items-center">
+                    <svg className="h-6 w-6 flex-none fill-sky-100 stroke-lime-600 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="11" />
+                      <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                    </svg>
+                    <p className="ml-4">
+                      És dos Açores;
+                    </p>
+                  </li>
+                  <li className="flex items-center">
+                    <svg className="h-6 w-6 flex-none fill-sky-100 stroke-lime-600 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="11" />
+                      <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                    </svg>
+                    <p className="ml-4">
+                      És fixe;
+                    </p>
+                  </li>
+                  <li className="flex items-center">
+                    <svg className="h-6 w-6 flex-none fill-sky-100 stroke-lime-600 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="11" />
+                      <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
+                    </svg>
+                    <p className="ml-4">Estás à procura de produtos locais;</p>
+                  </li>
+                </ul>
+                <p>Junta-te para teres acesso aos produtos mais frescos!!!</p>
+              </div>
+              <div className="pt-8 text-base font-semibold leading-7">
+                <p className="text-gray-900">Queres te juntar ao Mercadinho?</p>
+                <button
+                  className="flex w-full justify-center rounded-md bg-lime-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-lime-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600"
+                  onClick={redirect}
+                >
+                  Login
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </main >
   )
 }
