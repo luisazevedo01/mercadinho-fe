@@ -1,12 +1,17 @@
-'use client'
-import { useRouter } from "next/navigation";
+import { useQuery } from "@apollo/client";
+import { USERS } from "graphql/queries/user";
 
-export default function Default() {
-  const router = useRouter();
+export default function App() {
 
-  const redirect = () => {
-    router.push('/login')
+  const { loading, error, data } = useQuery(USERS);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) {
+    console.error('Error fetching data:', error);
+    return <p>Error: {error.message}</p>;
   }
+  console.log('data: ', data);
+
 
   return (
     <main className="">

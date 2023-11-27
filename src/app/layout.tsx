@@ -1,3 +1,4 @@
+import GraphQLProvider from '../graphql/graphql-provider';
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '/src/styles/globals.css'
@@ -14,17 +15,16 @@ export const metadata: Metadata = {
   description: 'No description yet',
 }
 
+
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-inter antialiased bg-green text-gray-900 tracking-tight`}>
-        <div className='flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip'>
-          {children}
-        </div>
+      <body className={inter.className}>
+        <GraphQLProvider>{children}</GraphQLProvider>
       </body>
     </html>
   )

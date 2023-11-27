@@ -1,5 +1,5 @@
-import { ProductCard } from "@/components/cards/ProductCard";
-import { MOCKED_PRODUCTS } from "@/constants/mocked-products";
+import { ProductCard } from "../../components/cards/ProductCard";
+import { MOCKED_PRODUCTS } from "../../constants/mocked-products";
 
 export default function Market() {
     return (
