@@ -1,3 +1,4 @@
+"use client"
 import { useQuery } from "@apollo/client";
 import { USERS } from "graphql/queries/user";
 
